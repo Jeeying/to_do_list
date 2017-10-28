@@ -1,0 +1,10 @@
+I" (function() {
+  $('input').click(function() {
+    return $.ajax({
+      type: "patch",
+      url: "/lists/<%= list.id%>/finished"
+    });
+  });
+
+}).call(this);
+:ET

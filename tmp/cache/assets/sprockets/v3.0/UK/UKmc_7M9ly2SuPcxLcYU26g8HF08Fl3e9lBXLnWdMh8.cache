@@ -1,0 +1,7 @@
+I"~(function() {
+  $('input').click(function() {
+    return $('.list-group-item').text('<%= lists.id %>');
+  });
+
+}).call(this);
+:ET

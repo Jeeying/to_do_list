@@ -1,0 +1,41 @@
+<% if @list.errors.present? %>
+	<ul  class="list-group">
+		<% @list.errors.each do |error,message| %>
+		<li  class="list-group-item"><%= "#{error.capitalize} #{message}" %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<div class="form container">
+<%= form_for @list do |f| %>
+
+	<div class="form-group">
+		<%= f.label :list_name %>
+		<%= f.text_field :list_name, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :finished %>
+		<%= f.select(:finished, [true, false] ,{},{class: "form-control"})%>
+		
+	</div>
+
+	<div class="form-group">
+		<%= f.label :due_date %>
+		<%= f.text_field :due_date, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :description %>
+		<%= f.text_area :description, class: "form-control" %>
+	</div>
+
+	<%= f.submit %>
+
+<% end %>
+</div>
+<script>
+$(document).ready(function(){
+  $("input[type='submit']").addClass("btn btn-info");
+});
+</script>

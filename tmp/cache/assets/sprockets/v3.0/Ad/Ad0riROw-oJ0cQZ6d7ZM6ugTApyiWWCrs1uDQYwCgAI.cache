@@ -1,0 +1,12 @@
+I"¿(function() {
+  alert('<%= lists.id %>');
+
+  $('input').click(function() {
+    return $.ajax({
+      type: "patch",
+      url: "/lists/<%= lists.id %>/finished"
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,5 @@
+I"R(function() {
+  $("input[submit]").addClass("btn btn-info");
+
+}).call(this);
+:ET

@@ -1,0 +1,35 @@
+<h1>To Do List</h1>
+<div class="list-group-item"><%= flash[:alert] %></div>
+
+<div class="container">
+	<table class="table table-hover">
+		<tr>
+			<th>List Name</th>
+			<th>Due Date</th>
+			<th>More</th>
+			<th>Edit</th>
+			<th>Destroy</th>
+		</tr>
+	<% @lists.each do |list| %>
+		<tr>
+			<td><label>
+			<a rel="nofollow" data-method="patch" href="<%= finished_path(list) %>">
+			<input type="checkbox" name="finished"
+			<%= if list.finished 
+			'checked'
+			end %>
+			><div class="txt"><%= list.list_name %></div>
+			</a>
+			</label></td>
+			<td><%= list.due_date %></td>
+			<td><%= link_to 'More',list_path(list) %></td>
+			<td><%= link_to 'Edit',edit_list_path(list) %></td>
+			<td><%= link_to 'Destroy',list_path(list), method: :delete,data:{confirm: "Are you sure?"} %></td>
+		</tr>
+	<% end %>
+	</table>
+
+<%= link_to 'Destroy All',lists_path,method: :delete,data: {confirm:"You will delete all lists. \n Are you sure?"},class: "btn btn-default" %>
+
+<%= link_to 'New List',new_list_path,class: "btn btn-info" %>
+</div>

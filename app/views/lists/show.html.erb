@@ -1,0 +1,19 @@
+<div class="container">
+<h2>To do thing</h2><br>
+<ul class="list-group">
+  <h4>List Name</h4>
+  <li class="list-group-item"><%= @list.list_name %></li>
+
+  <h4>Finished</h4>
+  <li class="list-group-item"><%= @list.finished %></li>
+
+  <h4>Due Date</h4>
+  <li class="list-group-item"><%= @list.due_date %></li>
+
+  <h4>Description</h4>
+  <li class="list-group-item"><%= simple_format(@list.description) %></li>
+</ul>
+<%= link_to "Back index", lists_path,class: "btn btn-info" %>
+
+
+</div>

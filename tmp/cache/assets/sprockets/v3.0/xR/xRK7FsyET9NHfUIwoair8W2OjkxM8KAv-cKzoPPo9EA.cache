@@ -1,0 +1,11 @@
+I"×(function() {
+  $('input'.click(function() {
+    if ($(this).prop('checked')) {
+      return $(this).attr('checked', 'checked');
+    } else {
+      return $(this).removeAttr('checked');
+    }
+  }));
+
+}).call(this);
+:ET
